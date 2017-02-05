@@ -106,7 +106,7 @@ PYGMENTS_STYLE = 'github'
 PLUGIN_PATHS = ['pelican-plugins']
 #PLUGINS = ['assets', 'sitemap', 'gravatar','extract_toc']
 #PLUGINS = ['better_tables']
-PLUGINS = ['neighbors', 'sitemap', 'ipynb.markup','extract_toc', 'related_posts', 'render_math']
+PLUGINS = ['neighbors', 'sitemap', 'ipynb.markup','extract_toc', 'related_posts', 'render_math', 'filetime_from_git']
 MARKUP = ('md', 'ipynb')
 #MD_EXTENSIONS = ['codehilite(css_class=codehilite)', 'extra', 'toc', 'meta']
 MARKDOWN = {
