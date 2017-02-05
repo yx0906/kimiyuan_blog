@@ -20,7 +20,7 @@ EXTRA_PATH_METADATA = {
     }
 
 
-THEME = 'pelican-themes/Flex'
+THEME = 'pelican-themes/Flex_blue'
 DATE_FORMATS = {'en': '%a %d %b %Y'}
 ARTICLE_PATHS = ['pages']
 ARTICLE_URL = ('{slug}.html')

@@ -1,3 +1,6 @@
 [submodule "pelican-plugins/ipynb"]
 	path = pelican-plugins/ipynb
 	url = git://github.com/danielfrg/pelican-ipynb.git
+[submodule "pelican-themes/Flex_blue"]
+	path = pelican-themes/Flex_blue
+	url = https://github.com/yx0906/Flex.git
