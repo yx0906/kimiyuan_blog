@@ -90,3 +90,9 @@ ENV/
 
 # OSX
 .DS_Store
+
+# output
+output/
+
+# publish file
+publishconf.py
