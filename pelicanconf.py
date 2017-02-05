@@ -108,9 +108,15 @@ PLUGIN_PATHS = ['pelican-plugins']
 #PLUGINS = ['better_tables']
 PLUGINS = ['neighbors', 'sitemap', 'ipynb.markup','extract_toc', 'related_posts', 'render_math']
 MARKUP = ('md', 'ipynb')
-MD_EXTENSIONS = ['codehilite(css_class=codehilite)', 'extra', 'toc', 'meta']
-#MD_EXTENSIONS = {'markdown.extensions.codehilite' : {'css_class': 'codehilite', 'noclasses': True,
-#   'pygments_style': 'vim'}, 'markdown.extensions.extra': {}, 'markdown.extensions.meta': {}, 'markdown.extensions.toc': {}}
+#MD_EXTENSIONS = ['codehilite(css_class=codehilite)', 'extra', 'toc', 'meta']
+MARKDOWN = {
+        'extension_configs': {
+            'markdown.extensions.codehilite' : {'css_class': 'codehilite',
+                #'noclasses': True, 'pygments_style': 'vim'
+                },
+            'markdown.extensions.extra': {},
+            'markdown.extensions.meta': {},
+            'markdown.extensions.toc': {}}}
 RELATED_POSTS_MAX = 10
 #MATH_JAX = {'align':'left'}
 #MATH_JAX = {'tex_extensions': ['color.js','mhchem.js']}
