@@ -1,6 +1,4 @@
 Title: Introducing Python Object Types
-Date: 2016-09-02 23:00
-Modified: 2016-09-02 23:00
 Category: Python
 Tags: readingnotes, learningpython
 Slug: learning-python-2

@@ -1,6 +1,4 @@
 Title: Iterations and Comprehensions
-Date: 2016-09-05 16:00
-Modified: 2016-09-05 16:00
 Category: Python
 Tags: readingnotes, learningpython
 Slug: learning-python-5
@@ -67,16 +65,16 @@ Many of Python’s other built-ins process iterables, too. For example, **sorted
     :::python
     >>> sorted(open('script2.py'))
     ['import sys\n', 'print(sys.path)\n', 'print(x ** 32)\n', 'x = 2\n']
-    
+
     >>> list(zip(open('script2.py'), open('script2.py')))
     [('import sys\n', 'import sys\n'), ('print(sys.path)\n', 'print(sys.path)\n'), ('x = 2\n', 'x = 2\n'), ('print(x ** 32)\n', 'print(x ** 32)\n')]
-    
+
     >>> list(enumerate(open('script2.py')))
     [(0, 'import sys\n'), (1, 'print(sys.path)\n'), (2, 'x = 2\n'), (3, 'print(x ** 32)\n')]
-    
+
     >>> list(filter(bool, open('script2.py'))) # nonempty=True
     ['import sys\n', 'print(sys.path)\n', 'x = 2\n', 'print(x ** 32)\n']
-    
+
     >>> import functools, operator
     >>> functools.reduce(operator.add, open('script2.py')) 'import sys\nprint(sys.path)\nx = 2\nprint(x ** 32)\n'
 
@@ -87,10 +85,10 @@ Many of Python’s other built-ins process iterables, too. For example, **sorted
     :::python
     >>> list(open('script2.py'))
     ['import sys\n', 'print(sys.path)\n', 'x = 2\n', 'print(x ** 32)\n']
-    
+
     >>> tuple(open('script2.py'))
     ('import sys\n', 'print(sys.path)\n', 'x = 2\n', 'print(x ** 32)\n')
-    
+
     >>> '&&'.join(open('script2.py'))
     'import sys\n&&print(sys.path)\n&&x = 2\n&&print(x ** 32)\n'
 
@@ -101,21 +99,21 @@ Sequence assignment, the in membership test, slice assignment, and the list’s 
     >>> a, b, c, d = open('script2.py')   # Sequence assignment
     >>> a, d
     ('import sys\n', 'print(x ** 32)\n')
-    
+
     >>> a, *b = open('script2.py')        # 3.X extended form
     >>> a, b
     ('import sys\n', ['print(sys.path)\n', 'x = 2\n', 'print(x ** 32)\n'])
-    
+
     >>> 'y = 2\n' in open('script2.py')   # Membership test
     False
     >>> 'x = 2\n' in open('script2.py')
     True
-    
+
     >>> L = [11, 22, 33, 44]
     >>> L[1:3] = open('script2.py')
     >>> L
     [11, 'import sys\n', 'print(sys.path)\n', 'x = 2\n', 'print(x ** 32)\n', 44]
-    
+
     >>> L = [11]
     >>> L.extend(open('script2.py'))      # list.extend method
     >>> L

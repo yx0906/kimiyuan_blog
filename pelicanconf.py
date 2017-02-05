@@ -113,10 +113,12 @@ MARKDOWN = {
         'extension_configs': {
             'markdown.extensions.codehilite' : {'css_class': 'codehilite',
                 #'noclasses': True, 'pygments_style': 'vim'
-                },
+            },
             'markdown.extensions.extra': {},
             'markdown.extensions.meta': {},
-            'markdown.extensions.toc': {}}}
+            'markdown.extensions.toc': {}
+        }
+}
 RELATED_POSTS_MAX = 10
 #MATH_JAX = {'align':'left'}
 #MATH_JAX = {'tex_extensions': ['color.js','mhchem.js']}

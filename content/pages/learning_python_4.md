@@ -1,11 +1,9 @@
 Title: Strings
-Date: 2016-09-04 15:00
-Modified: 2016-09-04 15:00
 Category: Python
 Tags: readingnotes, learningpython
 Slug: learning-python-4
 Authors: Kimi Yuan
-Summary: In-depth tour of the string object type. More about coding string literals, string operations, including sequence expressions, string method calls, and string formatting with both expressions and method calls. Also cover variety of concepts in depth, such as slicing, method call syntax, triple-quoted block strings and sequences.
+Summary: In-depth tour of the string object type. More about coding string literals and string operations.
 
 [TOC]
 

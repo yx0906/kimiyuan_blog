@@ -1,11 +1,9 @@
 Title: Function Basics and Scopes
-Date: 2016-09-13 23:00
-Modified: 2016-09-13 23:00
 Category: Python
 Tags: readingnotes, learningpython
 Slug: learning-python-6
 Authors: Kimi Yuan
-Summary: Introduce core ideas behind function definition -- the syntax and operation of the def and return statements, the behavior of function call expressions, and the notion and benefits of polymorphism in Python functions. And study one of two key concepts related to functions: scopes, which determine how variables are looked up when used.
+Summary: Introduce core ideas behind function definition, the behavior of function call expressions, and the notion and benefits of polymorphism in Python functions. And study key concept related to functions: scopes.
 
 [TOC]
 

@@ -1,11 +1,9 @@
 Title: The Dynamic Typing Interlude
-Date: 2016-09-03 15:00
-Modified: 2016-09-03 15:00
 Category: Python
 Tags: readingnotes, learningpython
 Slug: learning-python-3
 Authors: Kimi Yuan
-Summary: A deeper look at Python’s dynamic typing model—that is, the way that Python keeps track of object types for us automatically, rather than requiring us to code declaration statements in our scripts.
+Summary: A deeper look at Python’s dynamic typing model—that is, the way that Python keeps track of object types for us automatically.
 
 [TOC]
 

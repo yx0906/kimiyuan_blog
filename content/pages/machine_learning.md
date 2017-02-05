@@ -1,6 +1,4 @@
 Title: Intro to Machine Learning
-Date: 2016-10-03 15:00
-Modified: 2016-10-04 23:00
 Category: Data Science
 Tags: machinelearning, sklearn, scikit-learn
 Slug: machine_learning_basic

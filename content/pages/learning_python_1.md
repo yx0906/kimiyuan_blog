@@ -1,6 +1,4 @@
-Title: Getting Started
-Date: 2016-09-01 23:00
-Modified: 2016-09-01 23:00
+Title: Getting Started with Python
 Category: Python
 Tags: readingnotes, learningpython
 Slug: learning-python-1

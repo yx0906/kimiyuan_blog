@@ -1,6 +1,4 @@
 Title: Advanced Function Topics
-Date: 2016-09-17 15:00
-Modified: 2016-09-17 15:00
 Category: Python
 Tags: readingnotes, learningpython
 Slug: learning-python-8
@@ -18,16 +16,16 @@ Status: draft
                 return 0
             else:
                 return L[0] + mysum(L[1:])           # Call myself recursively
-    
+
     >>> mysum([1, 2, 3, 4, 5])
     15
-    
+
     def mysum(L):
         return 0 if not L else L[0] + mysum(L[1:])           # Use ternary expression
-    
+
     def mysum(L):
         return L[0] if len(L) == 1 else L[0] + mysum(L[1:])  # Any type, assume one
-    
+
     def mysum(L):
         first, *rest = L
         return first if not rest else first + mysum(rest)    # Use 3.X ext seq assign

@@ -1,6 +1,4 @@
 Title: Linear Algebra Basics with Numpy
-Date: 2016-10-25 15:00
-Modified: 2016-10-25 23:00
 Category: Data Science
 Tags: linear algebra, numpy, python
 Slug: linear_algebra_basic

@@ -1,6 +1,4 @@
 Title: Intro to IPython in Jupyter
-Date: 2016-09-18 23:00
-Modified: 2016-09-24 23:00
 Category: Python
 Tags: IPython, Jupyter, Python
 Slug: ipython-1

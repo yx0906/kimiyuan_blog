@@ -56,11 +56,11 @@ def filetime_from_git(content, git_content):
     if not hasattr(content, 'modified'):
         content.modified = content.date
 
-    if hasattr(content, 'date'):
-        content.locale_date = strftime(content.date, content.date_format)
+    #if hasattr(content, 'date'):
+    content.locale_date = strftime(content.date, content.date_format)
 
-    if hasattr(content, 'modified'):
-        content.locale_modified = strftime(
+    #if hasattr(content, 'modified'):
+    content.locale_modified = strftime(
             content.modified, content.date_format)
 
 
