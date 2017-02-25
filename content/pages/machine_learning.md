@@ -147,9 +147,29 @@ Parameter
 
 min_samples_split: Avoid overfitting
 
+
+
+
+
 ### Entropy
 
-controls how a DT decides where to split the data.
+
+
+The **self-information** $I(x_n)$ asscociated with outcome $w_n$ with probablity $P(x_n)$ is defined as:
+$$
+I(x_n) = - log(P(x_n)) = log(\frac{1}{P(x_n)})
+$$
+The smaller the probability of event $w_n$, the larger the quantity of self-information associated with the message that the event indeed occurred. If the above logarithm is base 2, the unit of $I(x_n)$ is [bits](https://en.wikipedia.org/wiki/Bit) or **shannon**. This is the most common practice. When using the [natural logarithm](https://en.wikipedia.org/wiki/Natural_logarithm) of base $e$, the unit will be the [nat](https://en.wikipedia.org/wiki/Nat_(unit)). For the base 10 logarithm, the unit of information is the [hartley](https://en.wikipedia.org/wiki/Hartley_(unit)).
+
+This measure has also been called **surprisal**, as it represents the **surprise** of seeing the outcome (a highly improbable outcome is very surprising).
+
+
+
+**Entropy** is a measure of *unpredictability* of the state, or equivalently, of its *average information content*. Shannon defined the entropy Η (Greek capital letter [eta](https://en.wikipedia.org/wiki/Eta)) of a [discrete random variable](https://en.wikipedia.org/wiki/Discrete_random_variable) *X* with possible values {$x_1$, ..., $x_n$} and [probability mass function](https://en.wikipedia.org/wiki/Probability_mass_function) P(*X*) as:
+$$
+H(X) = E[I(X)] = E[-log_b(P(X))]
+$$
+Value b could be 2, $e$ and 10.
 
 Definition: measure of **impurity** in a bunch of examples
 
@@ -165,7 +185,7 @@ entropy = 0 (minimum): All examples are same class.
 
 entropy = 1 (maximum): All examples are evenly split between classes.
 
-
+controls how a DT decides where to split the data.
 
 ### Information Gain
 
