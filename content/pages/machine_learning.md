@@ -235,7 +235,9 @@ $$
 
 actual —> training points,
 
-predicted —> predictions from regression $y = mx + b$
+predicted —> predictions from regression
+
+ $y = mx + b$
 
 
 

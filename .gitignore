@@ -96,3 +96,6 @@ output/
 
 # publish file
 publishconf.py
+
+# vscode
+.vscode/
