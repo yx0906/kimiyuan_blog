@@ -1,7 +1,7 @@
 Title: Intro to Machine Learning
 Category: Data Science
 Tags: machinelearning, sklearn, scikit-learn
-Slug: machine_learning_basic
+Slug: machine_learning_intro
 Authors: Kimi Yuan
 Status: draft
 
@@ -56,7 +56,7 @@ P(B | A) , the *likelihood*, is the probability of observing event B given that 
 
 ### Naive Bayes
 
-Naive Bayes methods are a set of supervised learning algorithms based on applying Bayes’ theorem with the “naive” assumption of **independence** between every pair of features. Given a class variable *y* and a dependent feature vector $x_1$ through $x_n$, Bayes’ Theorem states the following relationship:
+Naive Bayes methods are a set of supervised learning algorithms based on applying Bayes’ theorem with the “naive” assumption of **independence** between every pair of features. Given a class variable $y$ and a dependent feature vector $x_1$ through $x_n$, Bayes’ Theorem states the following relationship:
 $$
 P(y \mid x_1, ..., x_n) = \frac{P(y)P(x_1, ...,x_n \mid y)}{P(x_1, ...,x_n)}
 $$
@@ -72,7 +72,7 @@ Since $P(x_1, …, x_n)$ is constant given the input, we can use the following c
 $$
 P(y \mid x_1, ..., x_n)  \propto P(y)\prod_{i=1}^n{P(x_i \mid y)}
 $$
-and we can use Maximum A Posteriori (MAP) estimation to estimate P(y) and $P(x_i \mid y)$; the former is then the relative frequency of class y in the training set.
+and we can use Maximum A Posteriori (MAP) estimation to estimate P(y) and $P(x_i \mid y)$; the former is then the relative frequency of class $y$ in the training set.
 
 
 The different naive Bayes classifiers differ mainly by the assumptions they make regarding the distribution of $P(x_i \mid y)$.
