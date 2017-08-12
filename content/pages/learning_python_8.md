@@ -10,47 +10,83 @@ Status: draft
 
 ## Recursive Functions
 
-    :::python
-    >>> def mysum(L):
-            if not L:
-                return 0
-            else:
-                return L[0] + mysum(L[1:])           # Call myself recursively
+```Python
+:::python
+>>> def mysum(L):
+        if not L:
+            return 0
+        else:
+            return L[0] + mysum(L[1:])           # Call myself recursively
 
-    >>> mysum([1, 2, 3, 4, 5])
-    15
+>>> mysum([1, 2, 3, 4, 5])
+15
 
-    def mysum(L):
-        return 0 if not L else L[0] + mysum(L[1:])           # Use ternary expression
+def mysum(L):
+    return 0 if not L else L[0] + mysum(L[1:])           # Use ternary expression
 
-    def mysum(L):
-        return L[0] if len(L) == 1 else L[0] + mysum(L[1:])  # Any type, assume one
+def mysum(L):
+    return L[0] if len(L) == 1 else L[0] + mysum(L[1:])  # Any type, assume one
 
-    def mysum(L):
-        first, *rest = L
-        return first if not rest else first + mysum(rest)    # Use 3.X ext seq assign
+def mysum(L):
+    first, *rest = L
+    return first if not rest else first + mysum(rest)    # Use 3.X ext seq assign
+```
 
 
 The latter two of these fail for empty lists but allow for sequences of any object type that supports +, not just numbers:
 
-    :::python
-    >>> mysum([1])                              # mysum([]) fails in last 2
-    1
-    >>> mysum([1, 2, 3, 4, 5])
-    15
-    >>> mysum(('s', 'p', 'a', 'm'))             # But various types now work
-    'spam'
-    >>> mysum(['spam', 'ham', 'eggs'])
-    'spamhameggs'
+```Python
+:::python
+>>> mysum([1])                              # mysum([]) fails in last 2
+1
+>>> mysum([1, 2, 3, 4, 5])
+15
+>>> mysum(('s', 'p', 'a', 'm'))             # But various types now work
+'spam'
+>>> mysum(['spam', 'ham', 'eggs'])
+'spamhameggs'
+```
 
 
 Standard Python limits the depth of its runtime call stack—crucial to recursive call programs—to trap infinite recursion errors. To expand it, use the sys module:
 
-    :::python
-    >>> sys.getrecursionlimit()         # 1000 calls deep default
-    1000
-    >>> sys.setrecursionlimit(10000)    # Allow deeper nesting
-    >>> help(sys.setrecursionlimit)     # Read more about it
+```Python
+:::python
+>>> sys.getrecursionlimit()         # 1000 calls deep default
+1000
+>>> sys.setrecursionlimit(10000)    # Allow deeper nesting
+>>> help(sys.setrecursionlimit)     # Read more about it
+```
+
+
+
+## Function Objects: Attributes and Annotations
+
+
+
+### Function Introspection
+
+
+
+```Python
+:::python
+>>> def func(a):
+b = 'spam'
+return b * a
+>>> func(8)
+'spamspamspamspamspamspamspamspam'
+
+>>> func.__name__
+'func'
+
+>>> func.__code__
+<code object func at 0x00000000021A6030, file "<stdin>", line 1>
+
+>>> func.__code__.co_varnames
+('a', 'b')
+>>> func.__code__.co_argcount
+1
+```
 
 
 

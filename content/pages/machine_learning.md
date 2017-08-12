@@ -1,8 +1,9 @@
-Title: Intro to Machine Learning
+Title: Machine Learning Models with sklearn
 Category: Data Science
 Tags: machinelearning, sklearn, scikit-learn
 Slug: machine_learning_intro
 Authors: Kimi Yuan
+Summary: 
 Status: draft
 
 [TOC]
@@ -21,9 +22,9 @@ Within the field of *data analytics*, machine learning is a method used to devis
 
 ### Choose the right estimator
 
-http://scikit-learn.org/stable/tutorial/machine_learning_map/index.html
-
 ![scikit-learn algorithm cheat-sheet]({filename}/images/ml_map.jpg)
+Image is from [here](http://scikit-learn.org/stable/tutorial/machine_learning_map/index.html)
+
 
 ### Process for ML
 
@@ -404,46 +405,19 @@ Projection onto direction of maximal variance *minimizes distance* from old (hig
   * Make other algorithms (regression, classification) work better with fewer inputs
 
 
-
-
-# Text Learning
-
-Bag of Words
-
-Vocabulary: Not all words are equal.
-
-Stopwords: low information, highly frequent word - [the, in, for, you, will, have, be]
-
-NLTK
-
-Stemming
-
-```python
-from nltk.stem.snowball import SnowballStemmer
-stemmer = SnowballStemmer("english")
-stemmer.stem("responsiveness")
-stemmer.stem("responsivity")
-```
-
-You want to form word stems before constructing your bag-of-words.
-
-Tf-Idf: Term frequency–Inverse document frequency, weighting rare words higher
-
 # Model Validation & Evaluation
 
 ### Train/Test Split in sklearn
-
-
 
 ## Cross Validation
 
 ### K-Fold Cross Validation
 
-![kfolder](/Users/Kimi/Documents/Developer/Web_Projects/pelican_tech_blog/content/images/kfolder.png)
+![kfolder]({filename}/images/kfolder.png)
 
 ### Stratified K-Fold Cross Validation
 
-![stratified_kfold](/Users/Kimi/Documents/Developer/Web_Projects/pelican_tech_blog/content/images/stratified_kfold.png)
+![stratified_kfold]({filename}/images/stratified_kfold.png)
 
 `cross_val_score` uses stratified k-fold cross-validation by default for classification and k-fold cross-validation for regression.
 
@@ -494,8 +468,8 @@ $$
 F_1 = 2 \cdot \frac{precision\cdot recall}{precision+recall} = \frac{2\ TP}{2TP + FP + FN}
 $$
 
-More terminologies can be found in https://en.wikipedia.org/wiki/Confusion_matrix .
+More terminologies can be found in [https://en.wikipedia.org/wiki/Confusion_matrix](https://en.wikipedia.org/wiki/Confusion_matrix) .
 
 
 
-GD
+# Gradient Descent

@@ -1,4 +1,10 @@
-word2vec
+Title: Word2Vec
+Category: Data Science
+Tags: NLP, machinelearning
+Slug: word2vec
+Authors: Kimi Yuan
+Summary: 
+Status: draft
 
 [TOC]
 
@@ -12,7 +18,7 @@ word2vec
 
 
 
-![one_hot](/Users/Kimi/Documents/Developer/GitHub/kimiyuan_blog/content/images/one_hot.jpeg)
+![one_hot]({filename}/images/one_hot.jpeg)
 
 
 
@@ -26,13 +32,13 @@ Distributed Representations
 
 [Vector space models](https://en.wikipedia.org/wiki/Vector_space_model) (VSMs) represent (embed) words in a continuous vector space where semantically similar words are mapped to nearby points ('are embedded nearby each other'). VSMs have a long, rich history in NLP, but all methods depend in some way or another on the [Distributional Hypothesis](https://en.wikipedia.org/wiki/Distributional_semantics#Distributional_Hypothesis), which states that words that appear in the same contexts share semantic meaning. 
 
-# Word2vec 
+# Word2Vec 
 
 
 
 
 
-![word2vec_models](/Users/Kimi/Documents/Developer/GitHub/kimiyuan_blog/content/images/word2vec_models.jpeg)
+![word2vec_models]({filename}/images/word2vec_models.jpeg)
 
 
 
@@ -48,7 +54,7 @@ $p(o|c) = \cfrac{exp(u_o^Tv_c)}{\sum_{w=1}^Wexp(u_w^Tv_c)}$
 
 
 
-![skip_gram](/Users/Kimi/Documents/Developer/GitHub/kimiyuan_blog/content/images/skip_gram.jpeg)
+![skip_gram]({filename}/images/skip_gram.jpeg)
 
 **Notation for Skip-Gram Model:**
 
