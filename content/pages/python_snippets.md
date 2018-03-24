@@ -1,10 +1,3 @@
-Title: Python Snippets
-Category: Python
-Tags: snippet, python
-Slug: python-snippets
-Authors: Kimi Yuan
-Summary: 
-
 [TOC]
 
 # Standard Libraries
@@ -148,6 +141,9 @@ for k, v in some_dict.items():
     new_dict[v].append(k)
 ```
 
+
+
+### OrderDict
 
 
 
@@ -326,6 +322,12 @@ Out[49]: 3
 
 
 
+### hypot
+
+**math.hypot(x, y)** returns the Euclidean norm, `sqrt(x*x + y*y)`. This is the length of the vector from the origin to point `(x, y)`.
+
+
+
 
 
 ## tarfile
@@ -333,6 +335,22 @@ Out[49]: 3
 ```python
 with tarfile.open("somefile_pdc.tar.gz", "r:gz") as f:
     f.extract("a.txt")
+    
+    # or
+    f.extract_all()
+```
+
+
+
+## textwrap
+
+Collapse and truncate the given *text* to fit in the given *width*.
+
+First the whitespace in *text* is collapsed (all whitespace is replaced by single spaces). If the result fits in the *width*, it is returned. Otherwise, enough words are dropped from the end so that the remaining words plus the `placeholder` fit within `width`
+
+```python
+>>> textwrap.shorten("Hello world", width=10, placeholder="...")
+'Hello...'
 ```
 
 
@@ -349,7 +367,7 @@ food = pickle.load(open("food.pkl", 'rb'), encoding='latin1')
 
 
 
-# Numpy
+# Numpy & Scipy
 
 ```python
 # import modules
@@ -385,6 +403,31 @@ Out[17]: (2, 4)
 ```
 
 
+
+###Distance Computations
+
+```python
+# L2 distance between 2 vectors
+dist = np.linalg.norm(vect_a - vect_b)
+# or
+dist = np.sqrt(np.sum(vect_a - vect_b)**2)
+
+
+# L2 distances between vector (m,) and matrix (n,m), output (n,)
+dists = np.sqrt(np.sum((matrix - np.tile(vector, [n,1]))**2,1))
+# or
+dists = np.linalg.norm(matrix - np.tile(vector, [n,1]), axis=1)
+# or output (n,1)
+from scipy.spatial.distance import cdist
+dists = cdist(matrix, vector.reshape(1,-1))
+
+# L2 distances between matrix_a (m, k) and matrix_b (n, k), output (m, n)
+dists = cdist(matrix_a, matrix_b)
+```
+
+
+
+### 
 
 # Pandas
 
@@ -433,6 +476,15 @@ display(Image(filename="cat.jpg"))
 
 
 
+### Auto-reload module
+
+For IPython version 3.1, 4.x, and 5.x
+
+```python
+In [1]: %load_ext autoreload
+In [2]: %autoreload 2
+```
+
 
 
 # References
@@ -443,3 +495,4 @@ display(Image(filename="cat.jpg"))
 
 [3] https://docs.scipy.org/doc/numpy/reference/generated/numpy.reshape.html "numpy.reshape —Numpy Manual"
 
+[4] https://stackoverflow.com/questions/1907993/autoreload-of-modules-in-ipython "Autoreload of modules in IPython"
