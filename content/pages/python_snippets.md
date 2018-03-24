@@ -1,3 +1,10 @@
+Title: Python Snippets
+Category: Python
+Tags: learningpython
+Slug: python_snippets
+Authors: Kimi Yuan
+Summary: Useful Python Snippets in both standard and 3rd party libraries.
+
 [TOC]
 
 # Standard Libraries

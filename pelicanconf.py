@@ -86,7 +86,7 @@ DEFAULT_PAGINATION = 10
 DEFAULT_DATE = 'fs'
 
 # Theme
-COPYRIGHT_YEAR = 2016
+COPYRIGHT_YEAR = 2018
 
 USE_FOLDER_AS_CATEGORY = False
 MAIN_MENU = True
@@ -106,8 +106,9 @@ PYGMENTS_STYLE = 'github'
 PLUGIN_PATHS = ['pelican-plugins']
 #PLUGINS = ['assets', 'sitemap', 'gravatar','extract_toc']
 #PLUGINS = ['better_tables']
-PLUGINS = ['neighbors', 'sitemap', 'ipynb.markup','extract_toc', 'related_posts', 'render_math', 'filetime_from_git']
+PLUGINS = ['neighbors','liquid_tags.youtube','liquid_tags.notebook','liquid_tags.include_code', 'sitemap', 'extract_toc', 'related_posts', 'render_math', 'filetime_from_git']
 MARKUP = ('md', 'ipynb')
+NOTEBOOK_DIR = 'notebooks'
 #MD_EXTENSIONS = ['codehilite(css_class=codehilite)', 'extra', 'toc', 'meta']
 MARKDOWN = {
         'extension_configs': {

@@ -6,3 +6,5 @@ Category: Data Science
 Tags: machinelearning
 Author: Kimi Yuan
 Summary: Use historical statistics of checkpoints from ST CI Hourly to predict failure reason
+
+{% notebook hourly_ml.ipynb %}
