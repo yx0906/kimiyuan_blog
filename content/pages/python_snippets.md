@@ -1,6 +1,6 @@
 Title: Python Snippets
 Category: Python
-Tags: learningpython
+Tags: python, numpy, pandas, ipython, jupyter
 Slug: python_snippets
 Authors: Kimi Yuan
 Summary: Useful Python Snippets in both standard and 3rd party libraries.
@@ -434,7 +434,7 @@ dists = cdist(matrix_a, matrix_b)
 
 
 
-### 
+
 
 # Pandas
 
@@ -496,10 +496,11 @@ In [2]: %autoreload 2
 
 # References
 
-[1] https://github.com/mattharrison/Tiny-Python-3.6-Notebook/blob/master/python.rst "Tiny-Python-3.6-Notebook"
+\[1\]  [Tiny-Python-3.6-Notebook](https://github.com/mattharrison/Tiny-Python-3.6-Notebook/blob/master/python.rst)
 
-[2] http://chriskiehl.com/article/Cleaner-coding-through-partially-applied-functions/ "Cleaner Code Through Partial Function Application"
+[2\]  [Cleaner Code Through Partial Function Application](http://chriskiehl.com/article/Cleaner-coding-through-partially-applied-functions/)
 
-[3] https://docs.scipy.org/doc/numpy/reference/generated/numpy.reshape.html "numpy.reshape —Numpy Manual"
+[3\] [numpy.reshape —Numpy Manual](https://docs.scipy.org/doc/numpy/reference/generated/numpy.reshape.html)
 
-[4] https://stackoverflow.com/questions/1907993/autoreload-of-modules-in-ipython "Autoreload of modules in IPython"
+[4\] [Autoreload of modules in IPython](https://stackoverflow.com/questions/1907993/autoreload-of-modules-in-ipython)
+

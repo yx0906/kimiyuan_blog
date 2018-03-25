@@ -1,6 +1,6 @@
 Title: Arguments
 Category: Python
-Tags: readingnotes, learningpython
+Tags: readingnotes, learningpython, python
 Slug: learning-python-7
 Authors: Kimi Yuan
 Summary: Study the concepts in Python argument passing—the way that objects are sent to functions as inputs.

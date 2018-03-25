@@ -1,6 +1,6 @@
 Title: Function Basics and Scopes
 Category: Python
-Tags: readingnotes, learningpython
+Tags: readingnotes, learningpython, python
 Slug: learning-python-6
 Authors: Kimi Yuan
 Summary: Introduce core ideas behind function definition, the behavior of function call expressions, and the notion and benefits of polymorphism in Python functions. And study key concept related to functions: scopes.

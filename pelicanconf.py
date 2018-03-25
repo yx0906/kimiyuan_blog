@@ -58,7 +58,7 @@ TIMEZONE = 'Asia/Shanghai'
 
 DEFAULT_LANG = 'en'
 
-
+ARTICLE_ORDER_BY = 'reversed-date'
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None

@@ -1,6 +1,6 @@
 Title: Advanced Function Topics
 Category: Python
-Tags: readingnotes, learningpython
+Tags: readingnotes, learningpython, python
 Slug: learning-python-8
 Authors: Kimi Yuan
 Summary:

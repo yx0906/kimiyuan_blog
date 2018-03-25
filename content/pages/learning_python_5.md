@@ -1,6 +1,6 @@
 Title: Iterations and Comprehensions
 Category: Python
-Tags: readingnotes, learningpython
+Tags: readingnotes, learningpython, python
 Slug: learning-python-5
 Authors: Kimi Yuan
 Summary:

@@ -1,6 +1,6 @@
 Title: Strings
 Category: Python
-Tags: readingnotes, learningpython
+Tags: readingnotes, learningpython, python
 Slug: learning-python-4
 Authors: Kimi Yuan
 Summary: In-depth tour of the string object type. More about coding string literals and string operations.

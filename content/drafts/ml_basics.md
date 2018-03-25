@@ -1,6 +1,6 @@
 Title: Machine Learning Basics
 Category: Data Science
-Tags: machinelearning, 
+Tags: machinelearning
 Slug: machine_learning_basic
 Authors: Kimi Yuan
 Status: draft
@@ -147,32 +147,26 @@ The **no free lunch theorem** for machine learning (Wreomlpert, 1996) states tha
 
 **Parametric models** learn a function described by a parameter vector whose size is finite and fixed before any data is observed. Assumptions can greatly simplify the learning process, but can also limit what can be learned. 
 **Non-parametric models** have no such limitation.
-​		
-​	
-
-
-​				
-​			
-​		
-​	
+		
 
 ## Regularization		
 
-​		
-​	
+Regularization is any modiﬁcation we make to a learning algorithm that is intended to reduce its generalization error but not its training error. Regularization is one of the central concerns of the ﬁeld of machine learning, rivaled in its importance only by optimization. Regularization basically adds the penalty as model complexity increases. Regularization parameter (lambda) penalizes all the parameters except intercept so that model generalizes the data and won’t overfit. More generally, we can regularize a model that learns a function $f(x;θ)$ by adding a penalty called a **regularization term** (or **regularizer**) R(f) to the cost function. 
+
+​	$\displaystyle\min_{f}\sum_{i=1}^nV(f(x_i), y_i) + \lambda R(f) $
 
 ## Maximum Likelihood Estimation
 
-
+TBD...
 
 # References
 
-[1] http://www.deeplearningbook.org Chapter 5, Machine Learning Basics from Deep Learning textbook
+[1] Chapter 5, Machine Learning Basics from [Deep Learning textbook](http://www.deeplearningbook.org)
 
-[2] https://en.wikipedia.org/wiki/Confusion_matrix 
+[2\] [https://en.wikipedia.org/wiki/Confusion_matrix]() 
 
-[3] http://www.damienfrancois.be/blog/files/modelperfcheatsheet.pdf Model Performance Cheatsheet
+[3\] [Model Performance Cheatsheet](http://www.damienfrancois.be/blog/files/modelperfcheatsheet.pdf )
 
-[4] http://scikit-learn.org/stable/modules/model_evaluation.html
+[4\]  [http://scikit-learn.org/stable/modules/model_evaluation.html]()
 
-[5] http://machinelearningmastery.com/parametric-and-nonparametric-machine-learning-algorithms/ Parametric and Nonparametric Machine Learning Algorithms
+[5\] [Parametric and Nonparametric Machine Learning Algorithms](http://machinelearningmastery.com/parametric-and-nonparametric-machine-learning-algorithms/ )

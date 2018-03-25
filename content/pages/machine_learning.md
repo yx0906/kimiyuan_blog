@@ -4,7 +4,6 @@ Tags: machinelearning, sklearn, scikit-learn
 Slug: machine_learning_intro
 Authors: Kimi Yuan
 Summary: 
-Status: draft
 
 [TOC]
 
@@ -130,7 +129,7 @@ Overfitting
 
 
 
-### Pro and Con:
+### Pro and Con
 
 Work well in a clear margin of separation
 
@@ -142,19 +141,21 @@ Not work well with lots of noise
 
 ## Decision Trees
 
-Parameter
+**Decision Trees (DTs)** are a non-parametric supervised learning method used for [classification](http://scikit-learn.org/stable/modules/tree.html#tree-classification) and [regression](http://scikit-learn.org/stable/modules/tree.html#tree-regression). The goal is to create a model that predicts the value of a target variable by learning simple decision rules inferred from the data features.
 
+For instance, in the example below, decision trees learn from data to approximate a sine curve with a set of if-then-else decision rules. The deeper the tree, the more complex the decision rules and the fitter the model.
 
+```python
+>>> from sklearn.datasets import load_iris
+>>> from sklearn import tree
+>>> iris = load_iris()
+>>> clf = tree.DecisionTreeClassifier()
+>>> clf = clf.fit(iris.data, iris.target)
+```
 
-min_samples_split: Avoid overfitting
-
-
-
-
+Use `min_samples_split` to avoid overfitting. To control the number of samples at a leaf node. A very small number will usually mean the tree will overfit, whereas a large number will prevent the tree from learning the data. 
 
 ### Entropy
-
-
 
 The **self-information** $I(x_n)$ asscociated with outcome $w_n$ with probablity $P(x_n)$ is defined as:
 $$
@@ -186,25 +187,17 @@ entropy = 0 (minimum): All examples are same class.
 
 entropy = 1 (maximum): All examples are evenly split between classes.
 
-controls how a DT decides where to split the data.
+controls how a Decision Tree decides where to split the data.
 
 ### Information Gain
 
-DT algorithm: maximize information gain
+Decision Tree algorithm: maximize information gain.
 
-Bias-Variance Dilemma?
-
-
-
-
-
-Homework
+More supervised classification models
 
 * K nearest neighbors
 * adaboost
 * random forest
-
-
 
 
 
@@ -222,8 +215,6 @@ Homework
 
 
 ## Linear Regression
-
-
 
 ### Linear Regression  Error
 
@@ -263,8 +254,6 @@ Closing to 1 means line does a good job of describing relationship between input
 
 It's irrelative to the amount of data set. It's better than sum of squared error.
 
-
-
 ### Code It Up
 
 ```python
@@ -282,8 +271,6 @@ reg.intercept   # intercept
 
 
 ### Multivariate Regression
-
-TBD
 
 one-vs-all/one-vs-rest
 
@@ -323,8 +310,6 @@ Consider the example with men's heights and suppose we have a random sample of n
 
 # Unsupervised Learning
 
-
-
 ## Clustering
 
 *Clustering* is the task of partitioning the dataset into groups, called clusters. The goal is to split up the data in such a way that points.
@@ -345,23 +330,22 @@ Procedure:
 K-Means Cluster Visualization
 You can play with k-means clustering yourself here: http://www.naftaliharris.com/blog/visualizing-k-means-clustering/
 
-### Agglomerative testing
-
-
-
-
-
-### DBSCAN
-
-
-
-
+```python
+>>> from sklearn.cluster import KMeans
+>>> import numpy as np
+>>> X = np.array([[1, 2], [1, 4], [1, 0],
+...               [4, 2], [4, 4], [4, 0]])
+>>> kmeans = KMeans(n_clusters=2, random_state=0).fit(X)
+>>> kmeans.labels_
+array([0, 0, 0, 1, 1, 1], dtype=int32)
+>>> kmeans.predict([[0, 0], [4, 4]])
+array([0, 1], dtype=int32)
+>>> kmeans.cluster_centers_
+array([[ 1.,  2.],
+       [ 4.,  2.]])
+```
 
 # Feature Scaling & Feature Selection
-
-Formula
-
-
 
 ## Feature Selection
 
@@ -369,7 +353,23 @@ Adding more features makes all models more complex, and so increases the chance 
 
 ### Univariate Statistics
 
+Univariate feature selection works by selecting the best features based on univariate statistical tests. It can be seen as a preprocessing step to an estimator.
 
+- [`SelectKBest`](http://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.SelectKBest.html#sklearn.feature_selection.SelectKBest) removes all but the ![k](http://scikit-learn.org/stable/_images/math/0b7c1e16a3a8a849bb8ffdcdbf86f65fd1f30438.png) highest scoring features
+- [`SelectPercentile`](http://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.SelectPercentile.html#sklearn.feature_selection.SelectPercentile) removes all but a user-specified highest scoring percentage of features
+
+```python
+>>> from sklearn.datasets import load_iris
+>>> from sklearn.feature_selection import SelectKBest
+>>> from sklearn.feature_selection import chi2
+>>> iris = load_iris()
+>>> X, y = iris.data, iris.target
+>>> X.shape
+(150, 4)
+>>> X_new = SelectKBest(chi2, k=2).fit_transform(X, y)
+>>> X_new.shape
+(150, 2)
+```
 
 ### Model-Based Feature Seclection
 
@@ -405,9 +405,21 @@ Projection onto direction of maximal variance *minimizes distance* from old (hig
   * Make other algorithms (regression, classification) work better with fewer inputs
 
 
-# Model Validation & Evaluation
+```python
+>>> import numpy as np
+>>> from sklearn.decomposition import PCA
+>>> X = np.array([[-1, -1], [-2, -1], [-3, -2], [1, 1], [2, 1], [3, 2]])
+>>> pca = PCA(n_components=2)
+>>> pca.fit(X)
+PCA(copy=True, iterated_power='auto', n_components=2, random_state=None,
+  svd_solver='auto', tol=0.0, whiten=False)
+>>> print(pca.explained_variance_ratio_)  
+[ 0.99244...  0.00755...]
+>>> print(pca.singular_values_)  
+[ 6.30061...  0.54980...]
+```
 
-### Train/Test Split in sklearn
+# Model Validation & Evaluation
 
 ## Cross Validation
 
@@ -415,11 +427,40 @@ Projection onto direction of maximal variance *minimizes distance* from old (hig
 
 ![kfolder]({filename}/images/kfolder.png)
 
+Example of 2-fold K-Fold repeated 2 times:
+
+```python
+>>> import numpy as np
+>>> from sklearn.model_selection import KFold
+
+>>> X = ["a", "b", "c", "d"]
+>>> kf = KFold(n_splits=2)
+>>> for train, test in kf.split(X):
+...     print("%s %s" % (train, test))
+[2 3] [0 1]
+[0 1] [2 3]
+```
+
 ### Stratified K-Fold Cross Validation
 
 ![stratified_kfold]({filename}/images/stratified_kfold.png)
 
 `cross_val_score` uses stratified k-fold cross-validation by default for classification and k-fold cross-validation for regression.
+
+Example of stratified 3-fold cross-validation on a dataset with 10 samples from two slightly unbalanced classes:
+
+```python
+>>> from sklearn.model_selection import StratifiedKFold
+
+>>> X = np.ones(10)
+>>> y = [0, 0, 0, 0, 1, 1, 1, 1, 1, 1]
+>>> skf = StratifiedKFold(n_splits=3)
+>>> for train, test in skf.split(X, y):
+...     print("%s %s" % (train, test))
+[2 3 6 7 8 9] [0 1 4 5]
+[0 1 3 4 5 8 9] [2 6 7]
+[0 1 2 4 5 6 7] [3 8 9]
+```
 
 ### Leave-one-out Cross Validation
 
@@ -441,6 +482,9 @@ $$
 ACC = \frac{TP + TN}{P + N}
 $$
 
+```python
+from sklearn.metrics import accuracy_score
+```
 
 ### Precision and Recall
 
@@ -459,6 +503,11 @@ $$
 
 Often, there is an inverse relationship between precision and recall, where it is possible to increase one at the cost of reducing the other. So precision and recall scores are not discussed in isolation.
 
+```python
+from sklearn.metrics import precision_score
+from sklearn.metrics import recall_score
+```
+
 ### F1 score
 
 In statistical analysis of binary classification, the F1 score (also F-score or F-measure) is a measure of a test's accuracy. It considers both the precision and the recall of the test to compute the score: The F1 score can be interpreted as a weighted average of the precision and recall, where an F1 score reaches its best value at 1 and worst at 0.
@@ -468,8 +517,11 @@ $$
 F_1 = 2 \cdot \frac{precision\cdot recall}{precision+recall} = \frac{2\ TP}{2TP + FP + FN}
 $$
 
+```python
+from sklearn.metrics import f1_score
+```
+
 More terminologies can be found in [https://en.wikipedia.org/wiki/Confusion_matrix](https://en.wikipedia.org/wiki/Confusion_matrix) .
 
 
 
-# Gradient Descent

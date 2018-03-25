@@ -1,6 +1,6 @@
 Title: Getting Started with Python
 Category: Python
-Tags: readingnotes, learningpython
+Tags: readingnotes, learningpython, python
 Slug: learning-python-1
 Authors: Kimi Yuan
 Summary: Why Do People Use Python? How to Run Python?

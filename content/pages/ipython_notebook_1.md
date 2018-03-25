@@ -1,6 +1,6 @@
 Title: Intro to IPython in Jupyter
 Category: Python
-Tags: IPython, Jupyter, Python
+Tags: python, ipython, jupyter
 Slug: ipython-1
 Authors: Kimi Yuan
 Summary: Overview of how to start with IPython in Jupyter and useful tips

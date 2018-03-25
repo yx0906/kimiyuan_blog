@@ -1,6 +1,6 @@
 Title: Introducing Python Object Types
 Category: Python
-Tags: readingnotes, learningpython
+Tags: readingnotes, learningpython, python
 Slug: learning-python-2
 Authors: Kimi Yuan
 Summary: Brief Introduction about Core Types like Strings, Lists, Dictionaries, etc in Python
